@@ -1,5 +1,5 @@
 # layout-1 ⚡️
-![Без-имени-3](https://user-images.githubusercontent.com/62440186/159779337-c11926dd-fe66-4d9c-b065-23962b1b9ef3.png)
+<img src="https://user-images.githubusercontent.com/62440186/159779337-c11926dd-fe66-4d9c-b065-23962b1b9ef3.png" alt="preview" width="200" height="200"/>
 
 ## Getting Started 🚀
 
