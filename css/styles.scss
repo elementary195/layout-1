@@ -1,0 +1,516 @@
+@import "general";
+
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  @include gradientBackground();
+  box-shadow: 0 1rem 1rem rgba($black-color, .1);
+  &.window-scroll {
+    background: $white-color;
+    .container {
+      button {
+        color: $black-color;
+      }
+      a {
+        color: $black-color;
+        &.btn {
+          color: $white-color;
+        }
+      }
+      .nav__logo h3 {
+        color: $black-color;
+      }
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+    button {
+      display: none;
+    }
+    a {
+      color: $white-color;
+      font-weight: 400;
+      font-size: .9rem;
+    }
+    .nav__logo h3 {
+      color: $white-color;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  nav {
+    &.window-scroll {
+      .container {
+        a {
+          color: $white-color;
+        }
+      }
+    }
+    .container {
+      button {
+        display: inline-block;
+        background: transparent;
+        color: $white-color;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &#close__nav-btn {
+          display: none;
+        }
+      }
+      ul {
+        position: fixed;
+        right: 5%;
+        top: 5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        display: none;
+        li {
+          width: 100%;
+          opacity: 0;
+          animation: flipNavItem 300ms ease forwards;
+          transform-origin: top;
+          &:nth-child(2) {
+            animation-delay: 200ms;
+          }
+          &:nth-child(3) {
+            animation-delay: 400ms;
+          }
+          &:nth-child(4) {
+            animation-delay: 600ms;
+          }
+          &:nth-child(5) {
+            animation-delay: 800ms;
+          }
+          @keyframes flipNavItem {
+            0% {
+              transform: rotateX(90deg);
+            }
+            100% {
+              transform: rotateX(0deg);
+              opacity: 1;
+            }
+          }
+
+          a {
+            color: $white-color;
+            height: 100%;
+            display: block;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            background: linear-gradient($primary-color-variant, darken($primary-color-variant, 12%));
+            &.btn {
+              background: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  @include gradientBackground();
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  .container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 46% 46%;
+    gap: 8%;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__content {
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        font-weight: 300;
+      }
+      p {
+        margin: 1rem 0 2rem;
+        color: $light-color;
+        font-size: 1.1rem;
+      }
+    }
+    //.header__image {
+    //  width: 50% ;
+    //}
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 60vh;
+    .container {
+      gap: 1rem;
+      .header__content {
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    height: 100vh;
+    padding-top: 3rem;
+    .container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      //.header__content {
+      //  margin: 0.8rem 0 1.5rem;
+      //  line-height: 1.4;
+      //}
+    }
+  }
+}
+
+#services {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    article {
+      @include gradientBackground();
+      padding: 1.5rem;
+      border-radius: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      height: fit-content;
+      transition: all 400ms ease;
+      &:hover {
+        margin-top: -0.5rem;
+      }
+      i {
+        font-size: 1.7rem;
+      }
+      div {
+        h4 {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  #services {
+    .container {
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      article {
+        padding: 1.2rem;
+        gap: 0.8rem;
+        &:hover {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  #services {
+    .container {
+      grid-template-columns: 1fr;
+      article {
+        div {
+          h4 {
+            margin-bottom: .8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+#specialists {
+  .container {
+    width: 68%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    article {
+      background: $white-color;
+      border-radius: 1rem;
+      box-shadow: 0 1.5rem 1.5rem rgba($black-color, .1);
+      position: relative;
+      transition: all 700ms ease;
+      &:hover {
+        box-shadow: none;
+        .specialist__image::before {
+          left: 0;
+          border-radius: 1rem;
+        }
+        .specialist__socials, .specialist__whatsapp {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .specialist__image {
+        height: 20rem;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          background: linear-gradient(135deg, rgba($primary-color, .8), rgba($primary-color-variant, .8));
+          border-radius: 50%;
+          transition: all 1s ease;
+        }
+      }
+      .specialist__details {
+        margin: 1.5rem 0;
+        text-align: center;
+      }
+      .specialist__socials {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        top: 1.2rem;
+        right: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s 400ms ease;
+        a {
+          background: $white-color;
+          color: $primary-color;
+          padding: .4rem;
+          display: flex;
+          font-size: .8rem;
+          border-radius: 50%;
+          transition: all 400ms ease;
+          &:hover {
+            background: $primary-color;
+            color: $white-color;
+          }
+        }
+      }
+      .specialist__whatsapp {
+        background: $success-color;
+        position: absolute;
+        bottom: 25%;
+        color: $white-color;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem;
+        border-radius: 50%;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s 400ms ease;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  #specialists {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  #specialists {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+#testimonials.swiper {
+  width: $container-lg;
+  .swiper-wrapper {
+    margin-bottom: 4rem;
+    article {
+      @include gradientBackground();
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      cursor: default;
+      font-size: .9rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    .patient {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .avatar {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+  .swiper-pagination-bullet {
+    background: $primary-color;
+  }
+}
+@media screen and (max-width: 600px) {
+  #testimonials.swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+#appointment {
+  .container {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap: 6%;
+    .info {
+      p {
+        margin: .5rem 0 2rem;
+      }
+      article {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        small {
+          margin-top: 0.4rem;
+          display: block;
+        }
+        .info__icon {
+          background: $secondary-color;
+          color: $white-color;
+          padding: .8rem;
+          border-radius: 50%;
+          display: flex;
+          height: fit-content;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      .form__group {
+        label {
+          font-size: .85rem;
+          margin-bottom: .4rem;
+          display: inline-block;
+          font-weight: 600;
+        }
+        input, textarea, select {
+          background: $white-color;
+          padding: .85rem 1rem;
+          display: block;
+          width: 100%;
+          border-radius: .4rem;
+          resize: none;
+          appearance: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  #appointment {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      .info {
+        h2, p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: $black-color;
+  color: $light-color;
+  padding-top: 6rem;
+  margin-top: 6rem;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    font-size: .85rem;
+    a {
+      color: $light-color;
+      transition: all 400ms ease;
+      &:hover {
+        color: $white-color;
+      }
+      & > h3 {
+        color: $white-color;
+      }
+    }
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+      }
+      & > h3 {
+        color: $white-color;
+      }
+      .footer__socials {
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba($white-color, .2);
+    font-size: .9rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer {
+    .container {
+      gap: 2.5rem;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    .container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      .btn-primary, .footer__socials {
+        margin: 0 auto;
+      }
+      article {
+        & > div {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
