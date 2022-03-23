@@ -1,6 +1,6 @@
 # layout-1 ⚡️
 <img src="https://user-images.githubusercontent.com/62440186/159779337-c11926dd-fe66-4d9c-b065-23962b1b9ef3.png" alt="preview" width="600" height="500"/>
-![Alt Text](https://imgur.com/a/EnE4Ufg)
+![Alt Text](http://i.imgur.com/tj1I69ih.gif)
 ## Getting Started 🚀
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
