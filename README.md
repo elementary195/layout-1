@@ -1,6 +1,6 @@
 # layout-1 ⚡️
 <img src="https://user-images.githubusercontent.com/62440186/159779337-c11926dd-fe66-4d9c-b065-23962b1b9ef3.png" alt="preview" width="600" height="500"/>
-<img src="https://i.ibb.co/vjsN4ZT/bandicam-2022-03-23-22-32-13-000-online-video-cutter-com.gif" alt="bandicam-2022-03-23-22-32-13-000-online-video-cutter-com" border="0"/>
+<a href="https://ibb.co/vjsN4ZT"><img src="https://i.ibb.co/qr0HYkc/bandicam-2022-03-23-22-32-13-000-online-video-cutter-com.gif" alt="bandicam-2022-03-23-22-32-13-000-online-video-cutter-com" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>hosting reviews 2019</a><br />
 
 ## Getting Started 🚀
 
